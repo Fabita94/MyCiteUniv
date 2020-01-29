@@ -7,26 +7,21 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ListView;
 
 public class MainActivity extends AppCompatActivity {
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        MenuInflater inflat = getMenuInflater();
-        inflat.inflate(R.menu.custom_menu, menu);
-        return true;
-    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Button btnReserv = (Button) findViewById(R.id.button);
-        btnReserv.setOnClickListener(new View.OnClickListener() {
+        Button btnConnexion = (Button) findViewById(R.id.coonexion);
+        btnConnexion.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                final Intent intentAutre = new Intent(getApplicationContext(), PavillonActivity.class);
+                final Intent intentAutre = new Intent(getApplicationContext(), LoginActivity.class);
                 startActivity(intentAutre);
                 finish();
             }
